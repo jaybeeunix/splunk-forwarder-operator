@@ -11,7 +11,7 @@ fi
 # Switch to forwarder license
 ./bin/splunk edit licenser-groups Forwarder -is_active 1 ${SPLUNK_ARGS}
 
-./bin/splunk start --nodaemon
+./bin/splunk start --nodaemon --debug
 
 # The above command still forks to the background even with --nodaemon so 
 # we do the tried and true while true sleep
