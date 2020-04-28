@@ -129,7 +129,7 @@ defaultGroup = internal
 [tcpout:internal]
 server = ` + instance.Name + `:9997
 `,
-		"limits.conf": `
+			"limits.conf": `
 [thruput]
 maxKBps = 0
 `,
