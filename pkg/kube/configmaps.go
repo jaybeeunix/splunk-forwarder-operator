@@ -129,6 +129,10 @@ defaultGroup = internal
 [tcpout:internal]
 server = ` + instance.Name + `:9997
 `,
+		"limits.conf": `
+[thruput]
+maxKBps = 0
+`,
 		},
 	}
 
@@ -146,6 +150,11 @@ export = system
 	data["inputs.conf"] = `
 [splunktcp://:9997]
 connection_host = dns
+`
+
+	data["limits.conf"] = `
+[thruput]
+maxKBps = 0
 `
 	if len(instance.Spec.Filters) > 0 {
 		data["transforms.conf"] = ""
